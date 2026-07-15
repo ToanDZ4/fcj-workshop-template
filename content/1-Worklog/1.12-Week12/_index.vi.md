@@ -16,7 +16,7 @@ pre: " <b> 1.12. </b> "
 | Thứ 2 | - Thêm dashboard/alarm CloudWatch và caching cho ứng dụng | 06/07/2026 | 06/07/2026 | [Workshop 5.6](../../5-Workshop/5.6-monitoring-caching/) |
 | Thứ 3 | - Kiểm thử end-to-end toàn diện và sửa lỗi | 07/07/2026 | 07/07/2026 | |
 | Thứ 4 | - Rà soát và tối ưu chi phí; gắn tag cho tài nguyên | 08/07/2026 | 08/07/2026 | |
-| Thứ 5 | - Dọn dẹp toàn bộ tài nguyên để tránh phát sinh chi phí | 09/07/2026 | 09/07/2026 | [Workshop 5.9](../../5-Workshop/5.9-cleanup/) |
+| Thứ 5 | - Dọn dẹp toàn bộ tài nguyên để tránh phát sinh chi phí | 09/07/2026 | 09/07/2026 | [Workshop 5.8](../../5-Workshop/5.8-cleanup/) |
 | Thứ 6 | - Hoàn thiện hướng dẫn workshop và báo cáo thực tập | 10/07/2026 | 10/07/2026 | |
 
 ### Kết quả đạt được trong Tuần 12

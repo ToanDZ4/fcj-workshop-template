@@ -16,7 +16,7 @@ pre: " <b> 1.12. </b> "
 | Mon | - Add CloudWatch dashboards/alarms and caching for the app | 06/07/2026 | 06/07/2026 | [Workshop 5.6](../../5-Workshop/5.6-monitoring-caching/) |
 | Tue | - Full end-to-end testing and bug fixing | 07/07/2026 | 07/07/2026 | |
 | Wed | - Cost review and optimization; tag resources | 08/07/2026 | 08/07/2026 | |
-| Thu | - Clean up all resources to avoid ongoing charges | 09/07/2026 | 09/07/2026 | [Workshop 5.9](../../5-Workshop/5.9-cleanup/) |
+| Thu | - Clean up all resources to avoid ongoing charges | 09/07/2026 | 09/07/2026 | [Workshop 5.8](../../5-Workshop/5.8-cleanup/) |
 | Fri | - Finalize the workshop guide and internship report | 10/07/2026 | 10/07/2026 | |
 
 ### Week 12 Achievements

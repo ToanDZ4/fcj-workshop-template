@@ -35,5 +35,4 @@ The ultimate goal of this Workshop is to help you master Cloud-native design thi
 5. [Serverless & Event-Driven Integration](5.5-serverless/)
 6. [System Monitoring & Caching](5.6-monitoring-caching/)
 7. [Global Content Delivery (CloudFront)](5.7-cloudfront/)
-8. [API Gateway Integration (Upcoming)](#)
-9. [Resource Cleanup](5.9-cleanup/)
+8. [Resource Cleanup](5.8-cleanup/)

@@ -33,5 +33,4 @@ Mục tiêu của Workshop là giúp bạn làm chủ tư duy thiết kế Cloud
 5. [Tích hợp Serverless & Sự kiện](5.5-serverless/)
 6. [Giám sát hệ thống & Caching](5.6-monitoring-caching/)
 7. [Phân phối nội dung toàn cầu (CloudFront)](5.7-cloudfront/)
-8. [Tích hợp API Gateway (Sắp tới)](#)
-9. [Dọn dẹp tài nguyên](5.9-cleanup/)
+8. [Dọn dẹp tài nguyên](5.8-cleanup/)
