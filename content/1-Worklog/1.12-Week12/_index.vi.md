@@ -3,56 +3,25 @@ title: "Worklog Tuần 12"
 date: 2024-01-01
 weight: 2
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 12:
+### Mục tiêu Tuần 12
+* Hoàn thiện dự án: giám sát & caching, kiểm thử end-to-end, rà soát chi phí, dọn dẹp tài nguyên.
+* Viết hướng dẫn workshop và hoàn thành báo cáo thực tập.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Công việc thực hiện trong tuần
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| Thứ 2 | - Thêm dashboard/alarm CloudWatch và caching cho ứng dụng | 06/07/2026 | 06/07/2026 | [Workshop 5.6](../../5-Workshop/5.6-monitoring-caching/) |
+| Thứ 3 | - Kiểm thử end-to-end toàn diện và sửa lỗi | 07/07/2026 | 07/07/2026 | |
+| Thứ 4 | - Rà soát và tối ưu chi phí; gắn tag cho tài nguyên | 08/07/2026 | 08/07/2026 | |
+| Thứ 5 | - Dọn dẹp toàn bộ tài nguyên để tránh phát sinh chi phí | 09/07/2026 | 09/07/2026 | [Workshop 5.9](../../5-Workshop/5.9-cleanup/) |
+| Thứ 6 | - Hoàn thiện hướng dẫn workshop và báo cáo thực tập | 10/07/2026 | 10/07/2026 | |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 12:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được trong Tuần 12
+* Thêm dashboard và alarm CloudWatch cùng caching, hoàn thành phần giám sát và hiệu năng.
+* Kiểm thử end-to-end toàn diện, sửa các lỗi còn lại, rà soát chi phí và gắn tag để phân bổ chi phí rõ ràng hơn.
+* Dọn dẹp toàn bộ tài nguyên AWS theo checklist để tránh phát sinh chi phí ngoài ý muốn.
+* Hoàn thành hướng dẫn workshop Nền tảng Thương mại điện tử Serverless (song ngữ EN/VI) và hoàn tất báo cáo thực tập này.
+* Nhìn lại: qua 12 tuần, tôi đã đi từ kiến thức nền AWS đến thiết kế, xây dựng, kiểm thử và viết tài liệu cho một ứng dụng serverless hoàn chỉnh trên AWS.

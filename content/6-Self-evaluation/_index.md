@@ -6,34 +6,35 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Self-Assessment
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+During my internship at **Amazon Web Services Vietnam** (First Cloud AI Journey program) from **17/04/2026** to **30/07/2026**, I had the opportunity to learn cloud computing in depth and apply it to a real project. Over 12 weeks I studied the core AWS service groups and then designed, built, tested, and documented a capstone — a **Serverless E-commerce Platform** on AWS.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+Through this project I improved my skills in **cloud architecture, hands-on AWS (IAM, VPC, S3, DynamoDB, ECS/Fargate, Lambda, CloudFront, CloudWatch), Infrastructure as Code, technical documentation, and self-directed learning.** I always tried to complete each weekly task well, follow the program's schedule, and ask my mentors when I got stuck.
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+To reflect objectively on the internship, I evaluate myself against the following criteria:
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+| No. | Criteria | Description | Good | Fair | Average |
+| --- | --- | --- | :--: | :--: | :--: |
+| 1 | **Professional knowledge & skills** | Understanding of AWS, applying it in practice, tool proficiency, work quality | ✅ | ☐ | ☐ |
+| 2 | **Ability to learn** | Absorbing new services and learning quickly each week | ✅ | ☐ | ☐ |
+| 3 | **Proactiveness** | Taking initiative, seeking out labs without waiting for instructions | ✅ | ☐ | ☐ |
+| 4 | **Sense of responsibility** | Completing weekly tasks on time and to a good standard | ✅ | ☐ | ☐ |
+| 5 | **Discipline** | Following the program schedule, rules, and processes | ☐ | ✅ | ☐ |
+| 6 | **Progressive mindset** | Receiving feedback and improving | ✅ | ☐ | ☐ |
+| 7 | **Communication** | Presenting ideas and reporting work clearly | ☐ | ✅ | ☐ |
+| 8 | **Teamwork** | Working effectively with mentors and peers | ✅ | ☐ | ☐ |
+| 9 | **Professional conduct** | Respecting mentors, peers, and the work environment | ✅ | ☐ | ☐ |
+| 10 | **Problem-solving skills** | Identifying issues, proposing solutions, debugging labs | ☐ | ✅ | ☐ |
+| 11 | **Contribution to project** | Delivering a working capstone with clear documentation | ✅ | ☐ | ☐ |
+| 12 | **Overall** | General evaluation of the whole internship | ✅ | ☐ | ☐ |
+
+### What I Did Well
+- Completed all 12 weekly learning blocks and the hands-on labs on schedule.
+- Designed and built a complete serverless application on AWS from scratch.
+- Documented everything clearly, including a bilingual workshop guide.
 
 ### Needs Improvement
-
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+- Deepen my knowledge of cost optimization and production-grade security hardening.
+- Improve problem-solving speed when debugging unfamiliar AWS errors.
+- Strengthen communication and presentation skills, especially explaining technical decisions to others.

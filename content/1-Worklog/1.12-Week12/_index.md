@@ -5,53 +5,23 @@ weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 12 Objectives
+* Finalize the capstone: monitoring & caching, end-to-end testing, cost review, resource cleanup.
+* Write the workshop guide and complete the internship report.
 
-### Week 12 Objectives:
+### Tasks carried out this week
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Mon | - Add CloudWatch dashboards/alarms and caching for the app | 06/07/2026 | 06/07/2026 | [Workshop 5.6](../../5-Workshop/5.6-monitoring-caching/) |
+| Tue | - Full end-to-end testing and bug fixing | 07/07/2026 | 07/07/2026 | |
+| Wed | - Cost review and optimization; tag resources | 08/07/2026 | 08/07/2026 | |
+| Thu | - Clean up all resources to avoid ongoing charges | 09/07/2026 | 09/07/2026 | [Workshop 5.9](../../5-Workshop/5.9-cleanup/) |
+| Fri | - Finalize the workshop guide and internship report | 10/07/2026 | 10/07/2026 | |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 12 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Week 12 Achievements
+* Added CloudWatch dashboards and alarms plus caching, completing the monitoring and performance sections.
+* Ran full end-to-end testing, fixed remaining issues, and reviewed cost, applying tags for clearer cost allocation.
+* Cleaned up all AWS resources following the cleanup checklist to avoid unexpected charges.
+* Completed the Serverless E-commerce Platform workshop guide (bilingual EN/VI) and finalized this internship report.
+* Reflection: over 12 weeks I moved from AWS fundamentals to designing, building, testing, and documenting a full serverless application on AWS.

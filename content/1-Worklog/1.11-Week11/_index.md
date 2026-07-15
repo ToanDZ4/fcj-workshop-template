@@ -5,53 +5,23 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 11 Objectives
+* Continue building the capstone (part 2).
+* Deploy the ECS/Fargate backend behind an ALB, add Route 53 + ACM and Cognito, serverless functions, and a CloudFront distribution.
 
-### Week 11 Objectives:
+### Tasks carried out this week
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Mon | - Build backend image, push to ECR, deploy ECS service on Fargate behind an ALB | 29/06/2026 | 29/06/2026 | [Workshop 5.4](../../5-Workshop/5.4-backend-ecs/) |
+| Tue | - Configure Route 53 domain + ACM certificate; add Cognito for auth | 30/06/2026 | 30/06/2026 | [Workshop 5.4](../../5-Workshop/5.4-backend-ecs/) |
+| Wed | - Add serverless functions (Lambda) for order processing | 01/07/2026 | 01/07/2026 | [Workshop 5.5](../../5-Workshop/5.5-serverless/) |
+| Thu | - Create a CloudFront distribution in front of frontend + API | 02/07/2026 | 02/07/2026 | [Workshop 5.7](../../5-Workshop/5.7-cloudfront/) |
+| Fri | - End-to-end smoke test of the full flow | 03/07/2026 | 03/07/2026 | |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 11 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Week 11 Achievements
+* Deployed the containerized backend on ECS/Fargate behind an Application Load Balancer with health checks.
+* Attached a custom domain via Route 53 and enabled HTTPS with an ACM certificate; integrated Cognito for sign-up/sign-in.
+* Added Lambda functions for order processing and connected them into the flow.
+* Put CloudFront in front of the frontend and API to reduce latency and serve everything over HTTPS.
+* Completed a full end-to-end smoke test; documentation became Workshop sections 5.4, 5.5 and 5.7.

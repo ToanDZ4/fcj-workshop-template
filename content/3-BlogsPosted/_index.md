@@ -6,17 +6,15 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+# Blogs Posted
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+During my internship I wrote three technical blog posts based on hands-on AWS labs I completed, and shared them with the [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj) community. Each post walks through the goal of the lab, the architecture, the main steps, and the lessons learned.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 1 – Hosting a static website on Amazon S3 and Amazon CloudFront](3.1-Blog1/)
+A step-by-step lab on hosting a static website on Amazon S3 and delivering it globally over HTTPS with Amazon CloudFront, including bucket policies, Origin Access Control, and cache behavior.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 2 – Building a serverless REST API with API Gateway, Lambda and DynamoDB](3.2-Blog2/)
+How to build a fully serverless REST API where Amazon API Gateway routes requests to AWS Lambda functions that read and write to an Amazon DynamoDB table — no servers to manage and pay-per-request pricing.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 3 – Running containers on Amazon ECS with AWS Fargate](3.3-Blog3/)
+Deploying a containerized application on Amazon ECS with AWS Fargate behind an Application Load Balancer, covering the image push to Amazon ECR, task definitions, services, and health checks.

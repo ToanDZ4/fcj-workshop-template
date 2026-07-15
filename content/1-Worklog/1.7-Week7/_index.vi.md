@@ -5,55 +5,23 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 7
+* Học về DNS, phân phối nội dung và xác thực trên AWS.
+* Hiểu Amazon Route 53, AWS Certificate Manager (ACM), Amazon CloudFront và Amazon Cognito.
 
-### Mục tiêu tuần 7:
+### Công việc thực hiện trong tuần
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| Thứ 2 | - Route 53 hosted zone, loại record (A, CNAME, Alias) | 01/06/2026 | 01/06/2026 | <https://docs.aws.amazon.com/route53/> |
+| Thứ 3 | - ACM: yêu cầu và xác thực chứng chỉ TLS công khai | 02/06/2026 | 02/06/2026 | <https://docs.aws.amazon.com/acm/> |
+| Thứ 4 | - CloudFront distribution, origin, cache behavior | 03/06/2026 | 03/06/2026 | <https://docs.aws.amazon.com/cloudfront/> |
+| Thứ 5 | - **Thực hành:** phục vụ website S3 qua CloudFront với HTTPS | 04/06/2026 | 04/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ 6 | - Amazon Cognito user pool, đăng ký/đăng nhập, JWT token | 05/06/2026 | 05/06/2026 | <https://docs.aws.amazon.com/cognito/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được trong Tuần 7
+* Tạo hosted zone Route 53 và hiểu các loại record cùng routing policy.
+* Yêu cầu và xác thực chứng chỉ TLS bằng ACM rồi gắn vào CloudFront/ALB để dùng HTTPS.
+* Cấu hình CloudFront distribution phía trước origin S3, thiết lập cache behavior, phục vụ nội dung qua HTTPS với độ trễ thấp hơn.
+* Thiết lập user pool Amazon Cognito cho đăng ký/đăng nhập và hiểu cách JWT token cấp quyền cho request API.
+* Các dịch vụ này cung cấp tên miền riêng, HTTPS, CDN và xác thực người dùng cho dự án.

@@ -5,27 +5,33 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Host website tĩnh trên Amazon S3 và Amazon CloudFront
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Trong bài lab này, tôi host một website tĩnh (HTML/CSS/JS) trên Amazon S3 và phân phối toàn cầu qua HTTPS bằng Amazon CloudFront. Đây là mô hình rất phổ biến, chi phí thấp cho landing page, trang tài liệu và ứng dụng single-page.
 
-Các điểm chính cần nắm:
+## Kiến trúc
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+```
+Người dùng → CloudFront (HTTPS, cache tại edge) → S3 bucket (private, file tĩnh)
+```
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+- **Amazon S3** lưu các file website. Bucket luôn ở trạng thái **private**; người dùng không truy cập trực tiếp.
+- **Amazon CloudFront** là CDN đặt phía trước S3. Nó xử lý HTTPS, cache nội dung tại các edge location gần người dùng, và đọc từ S3 thông qua **Origin Access Control (OAC)**.
 
-...Hình ảnh...
+## Các bước chính
 
-...Link...
+1. **Tạo bucket S3** và upload các file website (`index.html`, asset). Vẫn bật *Block Public Access*.
+2. **Tạo CloudFront distribution** với origin là bucket S3.
+3. **Bật Origin Access Control (OAC)** để chỉ CloudFront được đọc bucket, sau đó cập nhật **bucket policy** cho phép service principal của CloudFront.
+4. **Thiết lập default root object** là `index.html`.
+5. (Tùy chọn) **Thêm tên miền riêng** với Amazon Route 53 và **chứng chỉ ACM** để dùng HTTPS trên domain của bạn.
+6. **Kiểm thử** URL CloudFront và xác nhận trang tải qua HTTPS.
 
-...Hướng dẫn...
+## Bài học rút ra
+
+- Giữ bucket S3 private và chỉ phục vụ qua CloudFront + OAC an toàn hơn việc để bucket public.
+- Cache của CloudFront giảm rõ rệt độ trễ cho người dùng ở xa region của bucket.
+- Sau khi cập nhật file trên S3, có thể cần **cache invalidation** (hoặc đặt tên file có version) để thấy thay đổi ngay.
+
+> Đây chính là mô hình tôi dùng cho frontend của dự án Nền tảng Thương mại điện tử Serverless.

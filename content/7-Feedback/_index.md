@@ -6,42 +6,38 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# Sharing and Feedback
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
+Below I share my personal experience of taking part in the **First Cloud AI Journey (FCAJ)** program at AWS Vietnam, in the hope that it helps the FCAJ team keep improving.
 
 ### Overall Evaluation
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+**1. Learning Environment**
+The environment is friendly and open. Mentors and members are always willing to help whenever I run into difficulties, even outside of working hours. The weekly structure of the program made it easy to stay on track and measure my own progress.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**2. Support from Mentors**
+The mentors gave clear, detailed guidance and always encouraged me to ask questions. I especially appreciated that they let me try and solve problems myself first, then explained the reasoning, rather than just handing me the answer. This helped me build real problem-solving skills.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+**3. Relevance to My Major**
+The program aligned very well with my Software Engineering studies while introducing many new areas — cloud architecture, serverless, containers, and infrastructure as code — that I had not worked with before. It strengthened my foundation and gave me practical, job-ready skills.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+**4. Learning & Skill Development**
+I learned a large range of AWS services hands-on and, more importantly, how to combine them into a working end-to-end system. I also improved soft skills such as time management, technical writing, and presenting my work.
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+**5. Program Culture & Spirit**
+The FCAJ community is positive and supportive. People share resources, answer each other's questions, and celebrate progress. As an intern I felt like a real part of the group.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+**6. Curriculum & Resources**
+The Cloud Journey learning path and lab resources were well-organized and practical. The step-by-step labs made abstract concepts concrete.
 
----
+### What I Found Most Valuable
+- Building a complete capstone project end to end, which tied all the weekly topics together.
+- The habit of documenting every step, which made writing this report and the workshop guide much easier.
+- Learning to control cost and clean up resources responsibly on AWS.
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### Suggestions
+- A few more optional deep-dive sessions on cost optimization and security would be valuable.
+- More group activities or study buddies could help interns learn from each other.
 
----
-
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+### Thank You
+I sincerely thank the FCAJ mentors and the AWS Vietnam team for a well-structured, hands-on, and genuinely useful internship experience.

@@ -5,27 +5,33 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Hosting a Static Website on Amazon S3 and Amazon CloudFront
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+In this lab I hosted a static website (HTML/CSS/JS) on Amazon S3 and delivered it worldwide over HTTPS with Amazon CloudFront. This is a very common, low-cost pattern for landing pages, documentation sites, and single-page applications.
 
-Key points to know:
+## Architecture
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+```
+User → CloudFront (HTTPS, cached at edge) → S3 bucket (private, static files)
+```
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Amazon S3** stores the website files. The bucket stays **private**; users never access it directly.
+- **Amazon CloudFront** is the CDN in front of S3. It terminates HTTPS, caches content at edge locations close to users, and reads from S3 through **Origin Access Control (OAC)**.
 
-...Image...
+## Main steps
 
-...Link...
+1. **Create an S3 bucket** and upload the website files (`index.html`, assets). Keep *Block Public Access* enabled.
+2. **Create a CloudFront distribution** with the S3 bucket as the origin.
+3. **Enable Origin Access Control (OAC)** so only CloudFront can read from the bucket, then update the **bucket policy** to allow the CloudFront service principal.
+4. **Set the default root object** to `index.html`.
+5. (Optional) **Add a custom domain** with Amazon Route 53 and an **ACM certificate** for HTTPS on your own domain.
+6. **Test** the CloudFront URL and confirm the site loads over HTTPS.
 
-...Guide...
+## Lessons learned
+
+- Keeping the S3 bucket private and serving only through CloudFront + OAC is more secure than making the bucket public.
+- CloudFront caching noticeably reduces latency for users far from the bucket's region.
+- After updating files in S3, you may need a **cache invalidation** (or versioned file names) to see changes immediately.
+
+> This pattern is exactly what I used for the frontend of my capstone Serverless E-commerce Platform.

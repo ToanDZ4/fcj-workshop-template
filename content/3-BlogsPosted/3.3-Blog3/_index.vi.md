@@ -5,27 +5,41 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Chạy container trên Amazon ECS với AWS Fargate
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Trong bài lab này, tôi triển khai một ứng dụng web dạng container trên **Amazon ECS** dùng **AWS Fargate**, phía sau một **Application Load Balancer (ALB)**. Fargate là serverless cho container — bạn không phải quản lý host EC2 nào.
 
-Các điểm chính cần nắm:
+## Kiến trúc
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+```
+Người dùng → ALB → ECS Service (Fargate task) → (DynamoDB / RDS)
+                        ↑ image được kéo từ Amazon ECR
+```
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+- **Amazon ECR** lưu Docker image.
+- **Amazon ECS** với launch type **Fargate** chạy container dưới dạng task.
+- **Application Load Balancer** phân phối lưu lượng tới các task và chạy health check.
 
-...Hình ảnh...
+## Các bước chính
 
-...Link...
+1. **Build Docker image** cục bộ và **push lên Amazon ECR**:
+   ```bash
+   aws ecr get-login-password | docker login --username AWS --password-stdin <acct>.dkr.ecr.<region>.amazonaws.com
+   docker build -t myapp .
+   docker tag myapp:latest <acct>.dkr.ecr.<region>.amazonaws.com/myapp:latest
+   docker push <acct>.dkr.ecr.<region>.amazonaws.com/myapp:latest
+   ```
+2. **Tạo ECS cluster** (Fargate).
+3. **Tạo task definition** tham chiếu image ECR, CPU/memory, port mapping và **`ecsTaskExecutionRole`**.
+4. **Tạo ECS service** với số lượng task mong muốn, đặt trong các subnet private.
+5. **Thêm ALB** với target group và health check trỏ tới port của container.
+6. **Kiểm thử** bằng tên DNS của ALB trên trình duyệt.
 
-...Hướng dẫn...
+## Bài học rút ra
+
+- Fargate loại bỏ việc vá lỗi hay co giãn host EC2; bạn chỉ cần định nghĩa CPU/memory cho mỗi task.
+- **`ecsTaskExecutionRole`** là bắt buộc để ECS kéo image từ ECR và ghi log vào CloudWatch.
+- Chạy task trong **subnet private** phía sau ALB là bố cục an toàn, gần với môi trường production.
+
+> Đây chính là thiết kế backend của dự án Nền tảng Thương mại điện tử Serverless (Workshop mục 5.4).

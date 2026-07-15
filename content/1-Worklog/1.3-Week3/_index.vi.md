@@ -5,55 +5,24 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 3
+* Hiểu về mạng trên AWS với Amazon VPC.
+* Tìm hiểu subnet (public/private), Internet Gateway, NAT Gateway, route table, security group và network ACL.
+* Xây dựng một mạng cô lập để triển khai dự án về sau.
 
-### Mục tiêu tuần 3:
+### Công việc thực hiện trong tuần
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| Thứ 2 | - Khái niệm VPC, dải CIDR, subnet <br> - Subnet public vs private | 04/05/2026 | 04/05/2026 | <https://docs.aws.amazon.com/vpc/> |
+| Thứ 3 | - Internet Gateway & route table <br> - **Thực hành:** tạo VPC với subnet public/private | 05/05/2026 | 05/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ 4 | - NAT Gateway cho subnet private truy cập internet chiều ra <br> - Elastic IP cho NAT | 06/05/2026 | 06/05/2026 | <https://docs.aws.amazon.com/vpc/> |
+| Thứ 5 | - Security group vs network ACL (stateful vs stateless) | 07/05/2026 | 07/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ 6 | - VPC endpoint (Gateway & Interface) <br> - **Thực hành:** kiểm tra kết nối giữa các subnet | 08/05/2026 | 08/05/2026 | <https://docs.aws.amazon.com/vpc/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 3:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được trong Tuần 3
+* Xây dựng VPC với subnet public và private trải trên hai Availability Zone để đảm bảo tính sẵn sàng cao.
+* Cấu hình Internet Gateway và route table để subnet public ra được internet, và NAT Gateway để subnet private tải cập nhật mà vẫn giữ tính riêng tư.
+* Hiểu sự khác nhau giữa security group (stateful, cấp instance) và network ACL (stateless, cấp subnet), viết rule vào/ra theo least-privilege.
+* Tìm hiểu VPC endpoint và lý do nó giữ lưu lượng tới các dịch vụ AWS (như S3) bên trong mạng AWS.
+* Thiết kế mạng này trở thành nền tảng cho tầng backend ECS và cơ sở dữ liệu của dự án.

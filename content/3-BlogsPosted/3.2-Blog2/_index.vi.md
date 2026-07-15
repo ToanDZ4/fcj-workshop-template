@@ -5,27 +5,39 @@ weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Xây dựng REST API serverless với API Gateway, Lambda và DynamoDB
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Trong bài lab này, tôi xây dựng một **REST API hoàn toàn serverless**. Không có server nào phải quản lý: Amazon API Gateway nhận request HTTP, AWS Lambda chạy logic nghiệp vụ, và Amazon DynamoDB lưu dữ liệu. Bạn chỉ trả phí theo từng request.
 
-Các điểm chính cần nắm:
+## Kiến trúc
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+```
+Client → API Gateway → các hàm Lambda → bảng DynamoDB
+```
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+- **Amazon API Gateway** expose các endpoint REST (ví dụ `GET /items`, `POST /items`).
+- **AWS Lambda** có một hàm cho mỗi thao tác (list, get, create, delete).
+- **Amazon DynamoDB** là kho dữ liệu NoSQL với partition key `id`.
 
-...Hình ảnh...
+## Các bước chính
 
-...Link...
+1. **Tạo bảng DynamoDB** (`items`) với partition key `id`.
+2. **Viết các hàm Lambda** cho từng thao tác và cấp cho mỗi hàm một **execution role** least-privilege chỉ truy cập đúng bảng đó.
+3. **Tạo REST API trên API Gateway** và kết nối mỗi route/method tới Lambda tương ứng bằng proxy integration.
+4. **Deploy API** lên một stage (ví dụ `prod`) để lấy URL invoke.
+5. **Kiểm thử** bằng `curl` / Postman:
+   ```bash
+   curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/prod/items \
+     -H "Content-Type: application/json" \
+     -d '{"id":"1","name":"Sample"}'
+   ```
+6. (Tùy chọn) **Bảo vệ API** bằng Cognito authorizer để chỉ người dùng đã đăng nhập mới gọi được.
 
-...Hướng dẫn...
+## Bài học rút ra
+
+- Serverless loại bỏ việc quản lý server và tự động co giãn theo lưu lượng.
+- Execution role theo least-privilege rất quan trọng — mỗi hàm chỉ nên chạm vào tài nguyên nó cần.
+- Lưu ý **cold start của Lambda** ở request đầu tiên; giữ hàm nhỏ gọn và ít phụ thuộc.
+
+> Tôi tái sử dụng mô hình API Gateway + Lambda + DynamoDB này cho các API đơn hàng và sản phẩm của dự án.

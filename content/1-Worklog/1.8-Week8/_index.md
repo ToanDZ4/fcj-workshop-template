@@ -5,53 +5,23 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 8 Objectives
+* Learn monitoring, logging and caching on AWS.
+* Understand Amazon CloudWatch, AWS CloudTrail, AWS X-Ray, Amazon ElastiCache and AWS Systems Manager Parameter Store.
 
-### Week 8 Objectives:
+### Tasks carried out this week
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Mon | - CloudWatch metrics, logs, alarms, dashboards | 08/06/2026 | 08/06/2026 | <https://docs.aws.amazon.com/cloudwatch/> |
+| Tue | - CloudTrail for auditing API activity | 09/06/2026 | 09/06/2026 | <https://docs.aws.amazon.com/cloudtrail/> |
+| Wed | - AWS X-Ray tracing for distributed apps | 10/06/2026 | 10/06/2026 | <https://docs.aws.amazon.com/xray/> |
+| Thu | - ElastiCache (Redis) for caching; SSM Parameter Store for config/secrets | 11/06/2026 | 11/06/2026 | <https://docs.aws.amazon.com/elasticache/> |
+| Fri | - **Practice:** create alarms & a dashboard for the sample app | 12/06/2026 | 12/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 8 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Week 8 Achievements
+* Configured CloudWatch metrics, log groups, alarms, and a dashboard to observe application health.
+* Enabled CloudTrail to audit account activity and understood its role in security investigations.
+* Instrumented a sample app with X-Ray to trace requests across services and find bottlenecks.
+* Learned to cache with ElastiCache (Redis) to reduce database load, and to store configuration/secrets safely in SSM Parameter Store.
+* These observability and caching practices are applied to the capstone's monitoring and performance sections.

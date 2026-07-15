@@ -5,55 +5,23 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 8
+* Học về giám sát, ghi log và caching trên AWS.
+* Hiểu Amazon CloudWatch, AWS CloudTrail, AWS X-Ray, Amazon ElastiCache và AWS Systems Manager Parameter Store.
 
-### Mục tiêu tuần 8:
+### Công việc thực hiện trong tuần
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| Thứ 2 | - CloudWatch metric, log, alarm, dashboard | 08/06/2026 | 08/06/2026 | <https://docs.aws.amazon.com/cloudwatch/> |
+| Thứ 3 | - CloudTrail để kiểm toán hoạt động API | 09/06/2026 | 09/06/2026 | <https://docs.aws.amazon.com/cloudtrail/> |
+| Thứ 4 | - AWS X-Ray tracing cho ứng dụng phân tán | 10/06/2026 | 10/06/2026 | <https://docs.aws.amazon.com/xray/> |
+| Thứ 5 | - ElastiCache (Redis) để caching; SSM Parameter Store cho config/secret | 11/06/2026 | 11/06/2026 | <https://docs.aws.amazon.com/elasticache/> |
+| Thứ 6 | - **Thực hành:** tạo alarm & dashboard cho ứng dụng mẫu | 12/06/2026 | 12/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 8:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Kết quả đạt được trong Tuần 8
+* Cấu hình CloudWatch metric, log group, alarm và dashboard để theo dõi tình trạng ứng dụng.
+* Bật CloudTrail để kiểm toán hoạt động tài khoản và hiểu vai trò của nó trong điều tra bảo mật.
+* Gắn X-Ray vào ứng dụng mẫu để trace request qua các dịch vụ và tìm điểm nghẽn.
+* Học cách caching bằng ElastiCache (Redis) để giảm tải cơ sở dữ liệu, và lưu config/secret an toàn trong SSM Parameter Store.
+* Các thực hành về khả năng quan sát và caching này được áp dụng vào phần giám sát và hiệu năng của dự án.

@@ -5,27 +5,41 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Running Containers on Amazon ECS with AWS Fargate
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+In this lab I deployed a containerized web application on **Amazon ECS** using **AWS Fargate**, behind an **Application Load Balancer (ALB)**. Fargate is serverless for containers — you don't manage any EC2 hosts.
 
-Key points to know:
+## Architecture
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+```
+User → ALB → ECS Service (Fargate tasks) → (DynamoDB / RDS)
+                      ↑ image pulled from Amazon ECR
+```
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Amazon ECR** stores the Docker image.
+- **Amazon ECS** with the **Fargate** launch type runs the containers as tasks.
+- **Application Load Balancer** distributes traffic across tasks and runs health checks.
 
-...Image...
+## Main steps
 
-...Link...
+1. **Build the Docker image** locally and **push it to Amazon ECR**:
+   ```bash
+   aws ecr get-login-password | docker login --username AWS --password-stdin <acct>.dkr.ecr.<region>.amazonaws.com
+   docker build -t myapp .
+   docker tag myapp:latest <acct>.dkr.ecr.<region>.amazonaws.com/myapp:latest
+   docker push <acct>.dkr.ecr.<region>.amazonaws.com/myapp:latest
+   ```
+2. **Create an ECS cluster** (Fargate).
+3. **Create a task definition** referencing the ECR image, CPU/memory, port mappings, and the **`ecsTaskExecutionRole`**.
+4. **Create an ECS service** with the desired task count, placed in private subnets.
+5. **Add an ALB** with a target group and health check pointing to the container port.
+6. **Test** the ALB DNS name in the browser.
 
-...Guide...
+## Lessons learned
+
+- Fargate removes the need to patch or scale EC2 hosts; you just define CPU/memory per task.
+- The **`ecsTaskExecutionRole`** is required so ECS can pull the image from ECR and write logs to CloudWatch.
+- Running tasks in **private subnets** behind an ALB is a secure, production-like layout.
+
+> This is the exact backend design of my capstone Serverless E-commerce Platform (Workshop section 5.4).
