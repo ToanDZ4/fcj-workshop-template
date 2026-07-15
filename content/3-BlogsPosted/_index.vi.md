@@ -8,13 +8,13 @@ pre: " <b> 3. </b> "
 
 # Các bài blogs đã đăng
 
-Trong quá trình thực tập, tôi đã viết ba bài blog kỹ thuật dựa trên các bài lab AWS tôi tự thực hành, và chia sẻ với cộng đồng [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Mỗi bài trình bày mục tiêu của lab, kiến trúc, các bước chính và bài học rút ra.
+Trong quá trình thực tập, tôi đã viết ba bài blog kỹ thuật về các dịch vụ AWS và chia sẻ với cộng đồng [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Mỗi bài tóm tắt một dịch vụ hoặc tính năng, lý do nó quan trọng, cách hoạt động và góc nhìn cá nhân của tôi.
 
-### [Blog 1 – Host website tĩnh trên Amazon S3 và Amazon CloudFront](3.1-Blog1/)
-Bài lab từng bước về việc host một website tĩnh trên Amazon S3 và phân phối toàn cầu qua HTTPS bằng Amazon CloudFront, bao gồm bucket policy, Origin Access Control và cache behavior.
+### [Blog 1 – Bảo mật đám mây với Amazon VPC Encryption Controls](3.1-Blog1/)
+Tổng quan về Amazon VPC Encryption Controls, một tính năng mới cho phép tổ chức giám sát, bắt buộc và kiểm toán mã hóa khi truyền giữa các tài nguyên AWS — bao gồm Monitor Mode và Enforce Mode, mã hóa phần cứng AWS Nitro, các ngoại lệ, và cách nó giúp đáp ứng HIPAA, PCI DSS và FedRAMP.
 
-### [Blog 2 – Xây dựng REST API serverless với API Gateway, Lambda và DynamoDB](3.2-Blog2/)
-Cách xây dựng một REST API hoàn toàn serverless, trong đó Amazon API Gateway định tuyến request tới các hàm AWS Lambda đọc/ghi vào bảng Amazon DynamoDB — không cần quản lý server và tính phí theo từng request.
+### [Blog 2 – Web Search trên Amazon Bedrock AgentCore](3.2-Blog2/)
+Tính năng Web Search vừa GA trên Amazon Bedrock AgentCore giúp AI agent tra cứu thông tin thời sự trên web trong khi giữ mọi truy vấn bên trong môi trường AWS của khách hàng (zero data egress), được cung cấp dưới dạng connector chuẩn MCP với grounding đa nguồn và trích dẫn.
 
-### [Blog 3 – Chạy container trên Amazon ECS với AWS Fargate](3.3-Blog3/)
-Triển khai một ứng dụng container trên Amazon ECS với AWS Fargate phía sau Application Load Balancer, bao gồm push image lên Amazon ECR, task definition, service và health check.
+### [Blog 3 – Bảo vệ dữ liệu trên AWS với AWS Backup](3.3-Blog3/)
+Góc nhìn thực tế về AWS Backup — dịch vụ sao lưu và khôi phục tập trung, được quản lý hoàn toàn: Backup Plan, Backup Vault, sao lưu Cross-Region và Cross-Account, best practice, và vì sao chiến lược sao lưu nên nằm trong kiến trúc ngay từ đầu.
