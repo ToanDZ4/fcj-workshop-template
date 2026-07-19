@@ -1,7 +1,7 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
@@ -27,6 +27,6 @@ pre: " <b> 4.2. </b> "
 - Tự tin hơn để chia sẻ dự án của mình và đặt câu hỏi trước đám đông.
 
 ### Hình ảnh sự kiện
-*Thêm ảnh sự kiện của bạn vào đây.*
+![Buổi meeting dành cho sinh viên tham gia thực tập](/images/4-EventParticipated/event2-1.jpg)
 
 > Nghe các kỹ sư giàu kinh nghiệm áp dụng chính những dịch vụ tôi đang học giúp tôi hình dung rõ hơn về thiết kế ở mức production.

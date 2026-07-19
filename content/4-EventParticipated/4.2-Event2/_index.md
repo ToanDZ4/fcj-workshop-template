@@ -1,7 +1,7 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
@@ -27,6 +27,6 @@ pre: " <b> 4.2. </b> "
 - More confidence to share my own project and ask questions publicly.
 
 ### Event Photos
-*Add your event photos here.*
+![Meeting for internship students](/images/4-EventParticipated/event2-1.jpg)
 
 > Hearing how experienced engineers apply the same services I was learning gave me a clearer sense of production-grade design.
